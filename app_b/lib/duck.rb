@@ -1,3 +1,4 @@
+#
 class Duck
   def initialize(name)
     @name = name
