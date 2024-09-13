@@ -1,3 +1,14 @@
+coverage:
+  status:
+    project:
+      default:
+        flags:
+          - app_a
+          - app_b
+
+comment:
+  layout: " diff, flags, files"
+
 flags:
   app_a:
     carryforward: true
