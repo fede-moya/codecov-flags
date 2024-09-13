@@ -1,5 +1,5 @@
 codecov:
-  allow_pseudo_compare: True
+  allow_pseudo_compare: true
 
 coverage:
   status:
