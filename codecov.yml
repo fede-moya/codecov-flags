@@ -4,7 +4,7 @@ codecov:
 coverage:
   status:
     project:
-      default:
+      default: off
       app_a:
         flags:
           - app_a
