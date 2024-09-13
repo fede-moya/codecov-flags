@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-#
 class Foo
   def issue_one(qqq, status_category_key)
     qqq.arel_table.project(epic_issues_tbl[:id].count(:distinct)).
