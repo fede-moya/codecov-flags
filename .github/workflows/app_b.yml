@@ -1,0 +1,50 @@
+name: app_b
+on:
+  pull_request:
+    paths:
+      - app_b/**
+  push:
+    paths:
+      - app_b/**
+    branches:
+      - main
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Ruby ${{ matrix.ruby }}
+    strategy:
+      matrix:
+        ruby:
+          - '3.1'
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Run the default task
+        working-directory: app_b
+        run: bundle exec rspec --require spec_helper
+
+      - name: Download Codecov binary
+        working-directory: app_b
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+
+      - name: Upload results to Codecov
+        working-directory: app_b
+        run: ./codecov -F app_b -f coverage/coverage.json -t 3f3bae5d-5036-448f-9107-c1418e07fe64 

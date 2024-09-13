@@ -1,0 +1,5 @@
+flags:
+  app_a:
+    carryforward: true
+  app_b:
+    carryforward: true
