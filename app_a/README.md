@@ -1,4 +1,5 @@
 This is a ruby codebase which has some tests. Run `rake` to run tests.
+
 # Run tests
 ```sh
 bundle exec rspec --require spec_helper
