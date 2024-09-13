@@ -5,8 +5,11 @@ coverage:
   status:
     project:
       default:
+      app_a:
         flags:
           - app_a
+      app_b:
+        flags:
           - app_b
 
 comment:
