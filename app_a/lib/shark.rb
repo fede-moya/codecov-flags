@@ -1,3 +1,4 @@
+#
 class Shark
   def initialize(name)
     @name = name
