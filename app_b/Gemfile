@@ -1,9 +1,5 @@
 source "https://rubygems.org"
 
-#comment
-
-#another comment
-
 gem "rake"
 gem "rspec"
 gem "simplecov", "~> 0.20"
