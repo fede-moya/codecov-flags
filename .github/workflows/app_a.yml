@@ -31,9 +31,9 @@ jobs:
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        working-directory: app_a
         with:
           ruby-version: ${{ matrix.ruby }}
+          working-directory: app_a
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Run the default task
