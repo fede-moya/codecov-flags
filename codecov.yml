@@ -10,7 +10,10 @@ coverage:
           - app_b
 
 comment:
+  require_base: no
   layout: " diff, flags, files"
+  require_changes: false
+
 
 flags:
   app_a:
